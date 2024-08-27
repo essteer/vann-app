@@ -28,3 +28,7 @@
 .subtitle {
     text-decoration: underline;
 }
+
+.image {
+    width: 100%;
+}

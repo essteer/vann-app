@@ -9,6 +9,7 @@ import DeliveryReturn from "./components/pages/DeliveryReturn.jsx";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy.jsx";
 import ProductCare from "./components/pages/ProductCare.jsx";
 import ProductSpecifications from "./components/pages/ProductSpecifications.jsx";
+import RingSizeChart from "./components/pages/RingSizeChart.jsx";
 import Marquee from "react-fast-marquee";
 import { Routes, Route } from "react-router-dom";
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/pages/privacy-policy" element={<PrivacyPolicy />}/>
         <Route path="/pages/product-care" element={<ProductCare />}/>
         <Route path="/pages/product-specifications" element={<ProductSpecifications />}/>
+        <Route path="/pages/ring-size-chart" element={<RingSizeChart />}/>
       </Routes>
 
       <Footer />
