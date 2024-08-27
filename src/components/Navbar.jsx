@@ -4,7 +4,7 @@ import "../styles/Navbar.css"
 const Navbar = () => {
 
     return (
-        <div>
+        <div className="navbar-container" >
             <nav className="navbar">
                 <a href="/">
                     <img className="logo" src={logo} alt="VANN logo"></img>
