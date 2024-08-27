@@ -5,6 +5,7 @@ import Footer from "./components/Footer.jsx";
 import Main from "./components/Main.jsx";
 import Navbar from "./components/Navbar.jsx";
 import About from "./components/pages/About.jsx";
+import Contact from "./components/pages/Contact.jsx";
 import DeliveryReturn from "./components/pages/DeliveryReturn.jsx";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy.jsx";
 import ProductCare from "./components/pages/ProductCare.jsx";
@@ -31,6 +32,7 @@ function App() {
           }
         />
         <Route path="/pages/about" element={<About />}/>
+        <Route path="/pages/Contact" element={<Contact />}/>
         <Route path="/pages/delivery-and-return" element={<DeliveryReturn />}/>
         <Route path="/pages/privacy-policy" element={<PrivacyPolicy />}/>
         <Route path="/pages/product-care" element={<ProductCare />}/>

@@ -1,0 +1,50 @@
+.contact-form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px 20px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow resizing vertically */
+    height: 150px; /* Set height to make textarea several lines high */
+}
+
+button {
+    width: 75%;
+    padding: 4px 16px; /* Increase button padding for better appearance */
+    background-color: #000;
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16pt;
+}
+
+button:hover {
+    background-color: #11fe34;
+}

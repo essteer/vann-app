@@ -17,7 +17,7 @@ const Navbar = () => {
                         <a href="https://www.instagram.com/vann_jewellery/" target="_blank">Instagram</a>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="/pages/contact">Contact</a>
                     </li>
                     <li>
                         <a href="/search">Search</a>
