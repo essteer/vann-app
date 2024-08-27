@@ -1,0 +1,16 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer img {
+    border-radius: 0;
+    padding: 15px;
+    margin: 15px;
+    width: 95%;
+    flex-grow: 1;
+}
