@@ -1,0 +1,12 @@
+.banner {
+    color: #FFF;
+    background-color: #11fe34;
+    line-height: 1.5;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.banner h2 {
+    white-space: pre;
+    margin: 0;
+}
