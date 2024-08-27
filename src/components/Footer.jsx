@@ -8,24 +8,24 @@ const Footer = () => {
                 <div className="column">
                     <h3>Client services</h3>
                     <ul>
-                        <li>Delivery & Returns</li>
-                        <li>Privacy policy</li>
-                        <li>Contact us</li>
+                        <li><a href="/pages/delivery-and-return" >Delivery & Returns</a></li>
+                        <li><a href="/pages/privacy-policy" >Privacy policy</a></li>
+                        <li><a href="/pages/contact" >Contact us</a></li>
                     </ul>
                 </div>
                 <div className="column">
                     <h3>Product information</h3>
                     <ul>
-                        <li>Product care</li>
-                        <li>Product specifications</li>
-                        <li>Ring size chart</li>
+                        <li><a href="/pages/product-care" >Product care</a></li>
+                        <li><a href="/pages/product-specifications" >Product specifications</a></li>
+                        <li><a href="/pages/ring-size-chart" >Ring size chart</a></li>
                     </ul>
                 </div>
                 <div className="column">
                     <h3>Company</h3>
                     <ul>
-                        <li>About us</li>
-                        <a href="https://www.instagram.com/vann_jewellery/" target="_blank" ><li>Press</li></a>
+                        <li><a href="/pages/about" >About us</a></li>
+                        <li><a href="https://www.instagram.com/vann_jewellery/" target="_blank" >Press</a></li>
                     </ul>
                 </div>
             </div>
