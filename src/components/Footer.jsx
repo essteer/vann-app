@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="column">
                     <h3>Client services</h3>
                     <ul>
-                        <li><a href="/pages/delivery-and-return" >Delivery & Returns</a></li>
+                        <li><a href="/pages/delivery-and-return" >Delivery & returns</a></li>
                         <li><a href="/pages/privacy-policy" >Privacy policy</a></li>
                         <li><a href="/pages/contact" >Contact us</a></li>
                     </ul>
