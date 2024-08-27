@@ -1,0 +1,30 @@
+.page {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 30vh;
+}
+
+.spacing {
+    height: 75px;
+}
+
+.column-container {
+    display: flex;
+    margin: 0 25px;
+}
+  
+.left-column {
+    width: 50%;
+    font-size: 28pt;
+}
+  
+.right-column {
+    width: 50%;
+    font-weight: 500;
+    font-size: 14pt;
+    white-space: pre-line;
+}
+
+.subtitle {
+    text-decoration: underline;
+}
