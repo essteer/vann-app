@@ -1,0 +1,35 @@
+.product {
+    text-align: left;
+    max-width: 100%;
+    margin-bottom: 30vh;
+}
+
+.spacing {
+    height: 75px;
+}
+
+.column-container {
+    display: flex;
+    margin: 0 25px;
+}
+  
+.left-column {
+    width: 70%;
+    font-size: 28pt;
+}
+  
+.right-column {
+    width: 30%;
+    font-weight: 500;
+    font-size: 14pt;
+    white-space: pre-line;
+}
+
+.productName {
+    font-weight: bold;
+    font-size: 48pt;
+}
+
+.image {
+    width: 100%;
+}
