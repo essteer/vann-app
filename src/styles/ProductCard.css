@@ -1,0 +1,27 @@
+.product-card-container {
+    max-width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.product-card-container:hover {
+    transform: scale(1.05);
+}
+
+.product-card-image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.product-card-name {
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+.product-card-price {
+    font-size: 1.1rem;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}

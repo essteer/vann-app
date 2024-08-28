@@ -1,6 +1,7 @@
 .main-container {
     flex-grow: 1;
     min-height: 100vh;
+    font-family: "PT Sans Narrow", sans-serif;
 }
 
 .coverImage {
@@ -9,4 +10,13 @@
     object-fit: cover;
     overflow: hidden;
     object-position: center;
+}
+
+.featured-products-container {
+    margin: 0 25px;
+}
+
+.featured-products-h2 {
+    font-size: 36pt;
+    text-align: left;
 }
