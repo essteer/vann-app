@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from "../VANN_WEB_LOGO.avif";
 import "../styles/Navbar.css"
 
@@ -6,24 +7,24 @@ const Navbar = () => {
     return (
         <div className="navbar-container" >
             <nav className="navbar">
-                <a href="/">
+                <Link to="/">
                     <img className="logo" src={logo} alt="VANN logo"></img>
-                </a>
+                </Link>
                 <ul className="nav-links">
                     <li>
-                        <a href="/shop">Shop</a>
+                        <Link to="/shop">Shop</Link>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/vann_jewellery/" target="_blank">Instagram</a>
                     </li>
                     <li>
-                        <a href="/pages/contact">Contact</a>
+                        <Link to="/pages/contact">Contact</Link>
                     </li>
                     <li>
-                        <a href="/search">Search</a>
+                        <Link to="/search">Search</Link>
                     </li>
                     <li>
-                        <a href="/cart">Cart</a>
+                        <Link to="/cart">Cart</Link>
                     </li>
                 </ul>
             </nav>
