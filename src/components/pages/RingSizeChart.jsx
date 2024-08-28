@@ -1,4 +1,3 @@
-import ring_size_chart from "../../RING_SIZE_CONVERSION_CHART.webp";
 import "../../styles/Page.css";
 
 const RingSize = () => {
@@ -13,7 +12,7 @@ const RingSize = () => {
                     <h2>{title}</h2>
                 </div>
                 <div className="right-column">
-                    <img className="image" src={ring_size_chart}/>
+                    <img className="image" src="/RING_SIZE_CONVERSION_CHART.webp" />
                 </div>
             </div>
             <div className="spacing" >&nbsp;</div>

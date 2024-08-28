@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import logo from "../VANN_WEB_LOGO.avif";
 import "../styles/Navbar.css"
 
 const Navbar = () => {
@@ -8,7 +7,7 @@ const Navbar = () => {
         <div className="navbar-container" >
             <nav className="navbar">
                 <Link to="/">
-                    <img className="logo" src={logo} alt="VANN logo"></img>
+                    <img className="logo" src="/VANN_WEB_LOGO.avif" alt="VANN logo"></img>
                 </Link>
                 <ul className="nav-links">
                     <li>
