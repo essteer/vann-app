@@ -12,7 +12,7 @@ const RingSize = () => {
                     <h2>{title}</h2>
                 </div>
                 <div className="right-column">
-                    <img className="image" src="/RING_SIZE_CONVERSION_CHART.webp" />
+                    <img className="image" src="/images/RING_SIZE_CONVERSION_CHART.webp" />
                 </div>
             </div>
             <div className="spacing" >&nbsp;</div>

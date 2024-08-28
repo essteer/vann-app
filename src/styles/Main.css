@@ -3,6 +3,10 @@
     min-height: 100vh;
 }
 
-img {
-    max-width: 100%;
+.coverImage {
+    width: 100%;
+    height: calc(100vh - 100px);
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center;
 }

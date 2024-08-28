@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="navbar-container" >
             <nav className="navbar">
                 <Link to="/">
-                    <img className="logo" src="/VANN_WEB_LOGO.avif" alt="VANN logo"></img>
+                    <img className="logo" src="/images/VANN_WEB_LOGO.avif" alt="VANN logo"></img>
                 </Link>
                 <ul className="nav-links">
                     <li>

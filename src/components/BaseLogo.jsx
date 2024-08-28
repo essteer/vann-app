@@ -6,7 +6,7 @@ const BaseLogo = () => {
     return (
         <div className="baselogo">
             <Link to="/">
-                <img className="logo" src="/VANN_WEB_FOOTER.webp" alt="VANN logo"></img>
+                <img className="logo" src="/images/VANN_WEB_FOOTER.webp" alt="VANN logo"></img>
             </Link>
         </div>
     )
