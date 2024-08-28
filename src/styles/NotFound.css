@@ -1,0 +1,21 @@
+.not-found {
+    text-align: left;
+    max-width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.spacing {
+    height: 75px;
+}
+
+.four04 {
+    font-size: 10em;
+    margin: 0 auto;
+}
+
+.pageNotFound {
+    font-size: 4em;
+}

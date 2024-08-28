@@ -4,6 +4,8 @@ import BaseLogo from "./components/BaseLogo.jsx";
 import Footer from "./components/Footer.jsx";
 import Main from "./components/Main.jsx";
 import Navbar from "./components/Navbar.jsx";
+import NotFound from "./components/NotFound.jsx";
+import Product from "./components/Product.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import DeliveryReturn from "./components/pages/DeliveryReturn.jsx";
@@ -38,6 +40,7 @@ function App() {
         <Route path="/pages/product-care" element={<ProductCare />}/>
         <Route path="/pages/product-specifications" element={<ProductSpecifications />}/>
         <Route path="/pages/ring-size-chart" element={<RingSizeChart />}/>
+        <Route path="/*" element={<NotFound />}/>
       </Routes>
 
       <Footer />
