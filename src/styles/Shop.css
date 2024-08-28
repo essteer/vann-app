@@ -1,0 +1,42 @@
+.shop-container {
+    flex-grow: 1;
+    min-height: 100vh;
+    font-family: "PT Sans Narrow", sans-serif;
+    margin: 0 25px;
+}
+
+.shop-container h2 {
+    font-size: 40pt;
+    text-align: left;
+}
+
+.products-filter-container ul {
+    position: sticky;
+    top:0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.products-filter-container ul li a {
+    font-weight: 500;
+    font-size: 20pt;
+    color: #000;
+    /* padding-left: 12px; */
+    padding-right: 25px;
+    display: block;
+}
+
+.products-filter-container ul a:hover,
+.products-filter-container ul a:focus,
+.products-filter-container ul .active {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}

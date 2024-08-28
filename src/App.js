@@ -1,6 +1,7 @@
 import "./App.css";
 import Banner from "./components/Banner.jsx";
 import Main from "./components/Main.jsx";
+import Shop from "./components/Shop.jsx";
 import BaseLogo from "./components/boilerplate/BaseLogo.jsx";
 import Footer from "./components/boilerplate/Footer.jsx";
 import Navbar from "./components/boilerplate/Navbar.jsx";
@@ -33,6 +34,7 @@ function App() {
             </div>
           }
         />
+        <Route path="/shop" element={<Shop />}/>
         <Route path="/product/demo" element={<Product name="XL MOLTEN EARRINGS" category="Earrings" price={1234.55} colour="Silver" imageURI="shop/files/XL_Molten_F.jpg?v=1706969778&width=1200" />}/>
         <Route path="/pages/about" element={<About />}/>
         <Route path="/pages/contact" element={<Contact />}/>
