@@ -1,11 +1,11 @@
 import "./App.css";
 import Banner from "./components/Banner.jsx";
-import BaseLogo from "./components/BaseLogo.jsx";
-import Footer from "./components/Footer.jsx";
 import Main from "./components/Main.jsx";
-import Navbar from "./components/Navbar.jsx";
-import NotFound from "./components/NotFound.jsx";
-import Product from "./components/Product.jsx";
+import BaseLogo from "./components/boilerplate/BaseLogo.jsx";
+import Footer from "./components/boilerplate/Footer.jsx";
+import Navbar from "./components/boilerplate/Navbar.jsx";
+import NotFound from "./components/boilerplate/NotFound.jsx";
+import Product from "./components/products/Product.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import DeliveryReturn from "./components/pages/DeliveryReturn.jsx";

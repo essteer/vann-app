@@ -1,5 +1,5 @@
 import ProductCard from './ProductCard';
-import '../styles/ProductGrid.css';
+import '../../styles/ProductGrid.css';
 
 function ProductGrid({ products }) {
 

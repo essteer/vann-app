@@ -1,5 +1,5 @@
 import "../styles/Main.css";
-import ProductGrid from "./ProductGrid.jsx";
+import ProductGrid from "./products/ProductGrid.jsx";
 
 const Main = () => {
 
