@@ -1,5 +1,6 @@
-.contact-form {
-    max-width: 100%;
+.contact-form,
+.sendConfirmation {
+    max-width: 65%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -12,7 +13,7 @@
 
 .form-group label {
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .form-group input,
@@ -30,13 +31,13 @@
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow resizing vertically */
-    height: 150px; /* Set height to make textarea several lines high */
+    resize: vertical;
+    height: 150px;
 }
 
 button {
     width: 75%;
-    padding: 4px 16px; /* Increase button padding for better appearance */
+    padding: 4px 16px;
     background-color: #000;
     color: #FFF;
     border: none;

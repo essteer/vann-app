@@ -5,25 +5,26 @@ import "../../styles/Page.css";
 const Contact = () => {
 
     const title = 'Contact';
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         message: ''
     });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
+    const [sendConfirmation, setSendConfirmation] = useState('')
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
         setFormData({
             ...formData,
             [name]: value
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         console.log('Form submitted:', formData);
+        setSendConfirmation("We'll be in touch soon!")
         // TODO API call logic here
     };
 
@@ -81,6 +82,9 @@ const Contact = () => {
                         </div>
                         <button type="submit">Send</button>
                     </form>
+                    <div>
+                        <p className="sendConfirmation" >{sendConfirmation}</p>
+                    </div>
                 </div>
             </div>
             <div className="spacing" >&nbsp;</div>
