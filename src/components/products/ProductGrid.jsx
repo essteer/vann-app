@@ -8,7 +8,7 @@ function ProductGrid({ products }) {
         <div>
             <div className="product-grid">
                 {products.map((product) => (
-                    <Link to={`/products/${product.productId}`} key={product.productId}>
+                    <Link to={`/products/${product.productId}`} key={product.productId} onClick={() => window.scrollTo(0, 0)}>
                     <ProductCard
                         key={product.productId}
                         imageURI={product.productImage}
