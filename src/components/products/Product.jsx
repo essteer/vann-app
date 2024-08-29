@@ -5,7 +5,7 @@ const Product = (props) => {
     const name = props.name;
     const category = props.category;
     const price = props.price;
-    const imageURI = "https://www.vannjewellery.com/cdn/" + props.imageURI;
+    const imageURI = "https://www.vannjewellery.com/cdn/shop" + props.imageURI;
     const colour = props.colour;
     const size = props.size;
 
