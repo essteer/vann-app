@@ -4,7 +4,7 @@ const Product = (props) => {
 
     const name = props.name;
     const price = props.price;
-    const imageURI = "https://www.vannjewellery.com/cdn/" + props.imageURI;
+    const imageURI = "https://www.vannjewellery.com/cdn/shop" + props.imageURI;
 
     return (
         <div className="product-card-container">
