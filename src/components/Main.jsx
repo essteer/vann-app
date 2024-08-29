@@ -4,10 +4,10 @@ import ProductGrid from "./products/ProductGrid.jsx";
 const Main = () => {
 
     const featuredProducts = [
-        { image: 'shop/products/Nova_Bracelet.jpg?v=1707045353', name: 'NOVA BRACELET', price: 365 },
-        { image: 'shop/files/HEART_EAR_CUFF_WG.jpg?v=1706532715', name: 'HEART EAR CUFF', price: 105 },
-        { image: 'shop/files/XL_Molten_F.jpg?v=1706969778&width=1200', name: 'XL MOLTEN EARRINGS', price: 575 },
-        { image: 'shop/files/Pearl_chocker_Heather.jpg?v=1712216804', name: 'PEARL CHOKER NECKLACE', price: 315 },
+        { category: 'bracelets', image: 'shop/products/Nova_Bracelet.jpg?v=1707045353', name: 'NOVA BRACELET', price: 365 },
+        { category: 'ear cuffs', image: 'shop/files/HEART_EAR_CUFF_WG.jpg?v=1706532715', name: 'HEART EAR CUFF', price: 105 },
+        { category: 'earrings', image: 'shop/files/XL_Molten_F.jpg?v=1706969778&width=1200', name: 'XL MOLTEN EARRINGS', price: 575 },
+        { category: 'necklaces', image: 'shop/files/Pearl_chocker_Heather.jpg?v=1712216804', name: 'PEARL CHOKER NECKLACE', price: 315 },
     ];
 
     return (
@@ -16,7 +16,7 @@ const Main = () => {
             <div className="featured-products-container">
                 <h2 className="featured-products-h2">Featured</h2>
                 <div className="featured-products-list">
-                    <ProductGrid products={featuredProducts} />
+                    <ProductGrid category="all" products={featuredProducts} />
                 </div>
             </div>
         </div>
