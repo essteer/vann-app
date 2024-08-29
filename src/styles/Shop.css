@@ -9,8 +9,13 @@
     font-size: 40pt;
     text-align: left;
 }
+.products-filter-container,
+.products-sort-container {
+    margin-bottom: 15px;
+}
 
-.products-filter-container ul {
+.products-filter-container ul,
+.products-sort-container ul {
     position: sticky;
     top:0;
     margin: 0;
@@ -21,7 +26,8 @@
     justify-content: flex-start;
 }
 
-.products-filter-container ul li a {
+.products-filter-container ul li a,
+.products-sort-container ul li a {
     font-weight: 500;
     font-size: 20pt;
     color: #000;
@@ -32,7 +38,10 @@
 
 .products-filter-container ul a:hover,
 .products-filter-container ul a:focus,
-.products-filter-container ul .active {
+.products-filter-container ul .active,
+.products-sort-container ul a:hover,
+.products-sort-container ul a:focus,
+.products-sort-container ul .active {
     text-decoration: underline;
 }
 
