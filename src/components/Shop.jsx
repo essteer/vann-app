@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/Shop.css';
-import ProductGrid from "./products/ProductGrid";
+import ProductGrid from "./products/ProductGrid.jsx";
 
 const Shop = () => {
 
