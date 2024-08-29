@@ -1,34 +1,49 @@
-import "../../styles/Product.css"
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import "../../styles/Product.css";
 
-const Product = (props) => {
+const Product = () => {
 
-    const name = props.name;
-    const category = props.category;
-    const price = props.price;
-    const imageURI = "https://www.vannjewellery.com/cdn/shop" + props.imageURI;
-    const colour = props.colour;
-    const size = props.size;
+    const { productId } = useParams();
+    const [product, setProduct] = useState(null)
+    const url = `http://localhost:9001/api/v1/products/${productId}`
+
+    useEffect(() => {
+        const fetchProduct = () => {
+            axios.get(url).then(response => {
+                if (response.data) {
+                    setProduct(response.data)
+                } else {
+                    console.log('Error retrieving data')
+                }
+            })
+                .catch(error => console.log('Error retrieving data: ' + error))
+        }
+        fetchProduct()
+    }, [productId])
 
     return (
         <div className="product">
+            {product && (
             <div className="column-container">
                 <div className="left-column">
-                    <img className="image" src={imageURI} />
+                    <img className="image" src={`https://www.vannjewellery.com/cdn/shop/${product.productImage}`} />
                 </div>
                 <div className="right-column">
-                    <h1 className="productName">{name}</h1>
-                    <p>US${price}</p>
+                    <h1 className="productName">{product.productName}</h1>
+                    <p>US${product.productPrice}</p>
                     <div>
-                        {colour && <p>COLOUR</p>}
-                        <p>{colour}</p>
+                        {product.colour && <p>COLOUR</p>}
+                        <p>{product.colour}</p>
                     </div>
                     <div>
-                        {size && <p>SIZE & FIT</p>}
-                        <p>{size}</p>
+                        {product.size && <p>SIZE & FIT</p>}
+                        <p>{product.size}</p>
                     </div>
-                    <p>{size}</p>
                 </div>
-            </div>
+            </div>)
+            }
             <div className="spacing" >&nbsp;</div>
         </div>
     )
