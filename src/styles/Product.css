@@ -72,5 +72,52 @@
             margin-top: auto;
         }
     }
+}
+
+.product-quantity-container {
+    width: 100%;
+}
+
+.quantity-button-container {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-button {
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+    font-size: 28px;
+    font-family: 'Consolas';
+    background-color: #fff;
+    border: solid 1px;
+    border-color: #000;
+    border-radius: 25px;
+}
+
+.quantity {
+    padding: 0 30px;
+}
+
+.product-add-to-cart-container {
+    display: flex;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.add-to-cart-button {
+    width: 65%;
+    padding: 4px 16px;
+    background-color: #000;
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16pt;
+}
     
+.add-to-cart-button:hover {
+    background-color: #11fe34;
 }
