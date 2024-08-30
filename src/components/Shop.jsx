@@ -104,6 +104,9 @@ const Shop = () => {
                         <li>
                             <Link to="/shop" onClick={() => changeShopCategoryHeader('necklaces')}>Necklaces</Link>
                         </li>
+                        <li>
+                            <Link to="/shop" onClick={() => changeShopCategoryHeader('rings')}>Rings</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -122,7 +125,6 @@ const Shop = () => {
                     </ul>
                 </div>
             </div>
-            <div className="spacing">&nbsp;</div>
             <div className="products-container">
                 <div className="products-list">
                     <ProductGrid products={products} />
