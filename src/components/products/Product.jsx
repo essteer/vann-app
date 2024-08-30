@@ -26,23 +26,32 @@ const Product = () => {
     return (
         <div className="product">
             {product && (
-            <div className="column-container">
-                <div className="left-column">
-                    <img className="image" src={`https://www.vannjewellery.com/cdn/shop/${product.productImage}`} />
-                </div>
-                <div className="right-column">
-                    <h1 className="productName">{product.productName}</h1>
-                    <p>US${product.productPrice}</p>
-                    <div>
-                        {product.colour && <p>COLOUR</p>}
-                        <p>{product.colour}</p>
+                <div className="container-container">
+                    <div className="product-lead-container">
+                        <h1 className="product-name">{product.productName}</h1>
+                        <p className="product-price">US${product.productPrice}.00</p>
                     </div>
-                    <div>
-                        {product.size && <p>SIZE & FIT</p>}
-                        <p>{product.size}</p>
+                    <div className="product-main-container">
+                        <div className="product-image-container">
+                            <img className="product-image" src={`https://www.vannjewellery.com/cdn/shop/${product.productImage}`} />
+                        </div>
+                        <div className="product-details-and-quantity-container">
+                            <div className="product-details-container">
+                                <div>
+                                    {product.colour && <p className="subtitle">Colour</p>}
+                                    <p>{product.colour ? product.colour.replace(/_/g, ' ') : null}</p>
+                                </div>
+                                <div>
+                                    {product.size && <p className="subtitle">Size & Fit</p>}
+                                    <p>{product.size ? product.size.replace(/_/g, ' ') : null}</p>
+                                </div>
+                            </div>
+                            <div className="product-quantity-container">
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>)
+                </div>)
             }
             <div className="spacing" >&nbsp;</div>
         </div>
