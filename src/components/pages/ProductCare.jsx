@@ -5,9 +5,9 @@ const ProductCare = () => {
     const title = 'Product care';
     const subtitles = [
         'Handmade', 
-        'Care of plated and coloured jewellery',
-        'Care of hollow jewellery',
-        'Care of silver jewellery',
+        'Plated and coloured jewellery',
+        'Hollow jewellery',
+        'Silver jewellery',
         'Storage'
     ]
     const text = [
