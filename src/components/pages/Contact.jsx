@@ -32,11 +32,12 @@ const Contact = () => {
     return (
         <div className="page">
             <div className="spacing" >&nbsp;</div>
-            <div className="column-container">
-                <div className="left-column">
-                    <h2>{title}</h2>
+            <div className="contact-container">
+                <div className="contact-lead-container">
+                    <h2 className="contact-lead">{title}</h2>
+                    <div className="spacing" >&nbsp;</div>
                 </div>
-                <div className="right-column">
+                <div className="contact-form-container">
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
@@ -80,7 +81,7 @@ const Contact = () => {
                                 required
                             />
                         </div>
-                        <button type="submit">Send</button>
+                        <button className="contact-form-button" type="submit">Send</button>
                     </form>
                     <div>
                         <p className="sendConfirmation" >{sendConfirmation}</p>
