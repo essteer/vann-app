@@ -25,7 +25,6 @@ const Contact = () => {
         event.preventDefault();
         console.log('Form submitted:', formData);
         setSendConfirmation("We'll be in touch soon!")
-        // TODO API call logic here
     };
 
 
