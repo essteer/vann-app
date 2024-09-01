@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
 import { baseURL, CartContext } from "../../App.js";
 import "../../styles/products/Product.css";
 

@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+
+import { baseURL } from '../../App.js';
 import '../styles/Shop.css';
 import ProductGrid from "./products/ProductGrid.jsx";
 
 const Shop = () => {
 
-    const api = 'http://localhost:9001/api/v1/products'
+    const api = `${baseURL}/products`
     const [productCategory, setProductCategory] = useState('all')
     const [products, setProducts] = useState([])
     const [sortType, setSortType] = useState('A—Z')

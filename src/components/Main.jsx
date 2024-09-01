@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+
+import { baseURL } from '../../App.js';
 import "../styles/Main.css";
 import ProductGrid from "./products/ProductGrid.jsx";
 
 const Main = () => {
 
-    const api = 'http://localhost:9001/api/v1/products'
+    const api = `${baseURL}/products`
     const [featuredProducts, setFeaturedProducts] = useState([]);
 
     useEffect(() => {
