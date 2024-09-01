@@ -42,7 +42,9 @@ $ npm run build
 
 ## Operation
 
-In the project root directory, use this command to run the app in development mode:
+The frontend can be run in isolation to navigate around and view the general form of the website. The full features of the site depend on the backend &mdash; see the [backend repo](https://github.com/essteer/vann) for information on how to set that up.
+
+In the project root directory, use this command to run the frontend app in development mode:
 
 ```console
 $ npm start
