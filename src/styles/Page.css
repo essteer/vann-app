@@ -49,6 +49,10 @@
     .right-column {
         width: 100%;
     }
+
+    .left-column h2 {
+        margin-bottom: 50px;
+    }
 }
 
 .subtitle {
