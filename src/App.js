@@ -1,3 +1,6 @@
+import { createContext, useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 import "./App.css";
 import Banner from "./components/Banner.jsx";
 import Main from "./components/Main.jsx";
@@ -14,41 +17,95 @@ import PrivacyPolicy from "./components/pages/PrivacyPolicy.jsx";
 import ProductCare from "./components/pages/ProductCare.jsx";
 import ProductSpecifications from "./components/pages/ProductSpecifications.jsx";
 import RingSizeChart from "./components/pages/RingSizeChart.jsx";
-import Marquee from "react-fast-marquee";
-import { Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+export const CartContext = createContext();
 
 function App() {
+  const [cart, setCart] = useState([]);
+  const demoUserId = "0df10449-d393-4c21-a78a-165c12d8ce09";
+  const demoUserCartId = "35c6e5f4-b876-4539-be24-c45705ce47dd";
+
+  useEffect(() => {
+    const fetchCart = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:9001/api/v1/cart/${demoUserCartId}`
+        );
+        setCart(response.data);
+      } catch (error) {
+        console.error("Error fetching cart:", error);
+        setCart({
+          cartItems: {},
+          cartCustomerId: demoUserId,
+          cartId: demoUserCartId,
+        });
+      }
+    };
+    fetchCart();
+  }, [demoUserCartId]);
+
+
+  const updateCart = async (cartId, cartItems) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:9001/api/v1/carts/${cartId}`,
+        cartItems,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Cart update OK: ", response.data);
+    } catch (error) {
+      console.error(
+        "Cart update error: ",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+
+  
   return (
-    <div className="App">
-      <Navbar />
+    <CartContext.Provider value={{ cart, updateCart }}>
+      <div className="App">
+        <Navbar />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <Marquee autoFill="true" speed={85}>
-                <Banner />
-              </Marquee>
-              <Main />
-            </div>
-          }
-        />
-        <Route path="/pages/about" element={<About />}/>
-        <Route path="/pages/contact" element={<Contact />}/>
-        <Route path="/pages/delivery-and-return" element={<DeliveryReturn />}/>
-        <Route path="/pages/privacy-policy" element={<PrivacyPolicy />}/>
-        <Route path="/pages/product-care" element={<ProductCare />}/>
-        <Route path="/pages/product-specifications" element={<ProductSpecifications />}/>
-        <Route path="/pages/ring-size-chart" element={<RingSizeChart />}/>
-        <Route path="/products/:productId" element={<Product />}/>
-        <Route path="/shop" element={<Shop />}/>
-        <Route path="/*" element={<NotFound />}/>
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <Marquee autoFill="true" speed={85}>
+                  <Banner />
+                </Marquee>
+                <Main />
+              </div>
+            }
+          />
+          <Route path="/pages/about" element={<About />} />
+          <Route path="/pages/contact" element={<Contact />} />
+          <Route
+            path="/pages/delivery-and-return"
+            element={<DeliveryReturn />}
+          />
+          <Route path="/pages/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/pages/product-care" element={<ProductCare />} />
+          <Route
+            path="/pages/product-specifications"
+            element={<ProductSpecifications />}
+          />
+          <Route path="/pages/ring-size-chart" element={<RingSizeChart />} />
+          <Route path="/products/:productId" element={<Product />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
 
-      <Footer />
-      <BaseLogo />
-    </div>
+        <Footer />
+        <BaseLogo />
+      </div>
+    </CartContext.Provider>
   );
 }
 

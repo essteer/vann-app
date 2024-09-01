@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { CartContext } from "../../App.js";
 import "../../styles/Product.css";
 
 const Product = () => {
 
+    const { cart, updateCart } = useContext(CartContext);
     const { productId } = useParams();
     const [product, setProduct] = useState(null)
     const [quantity, setQuantity] = useState(1)
@@ -24,9 +26,11 @@ const Product = () => {
         fetchProduct()
     }, [productId])
 
+
     const incrementQuantity = () => {
         setQuantity(quantity + 1)
     }
+
 
     const decrementQuantity = () => {
         if (quantity > 1) {
@@ -34,6 +38,19 @@ const Product = () => {
         }
     }
 
+    const handleAddToCart = async () => {
+        const currentCartItems = cart.cartItems || {};
+        const existingQuantity = currentCartItems[productId] || 0;
+        const newQuantity = existingQuantity + quantity;
+
+        const updatedCartItems = {
+            ...currentCartItems,
+            [productId]: newQuantity
+        };
+        updateCart(cart.cartId, updatedCartItems);
+    };
+
+    
     return (
         <div className="product">
             {product && (
@@ -66,7 +83,7 @@ const Product = () => {
                                         <button onClick={incrementQuantity} className="quantity-button">+</button>
                                     </div>
                                     <div className="product-add-to-cart-container">
-                                        <button className="add-to-cart-button" type="submit">Add to cart</button>
+                                        <button className="add-to-cart-button" onClick={handleAddToCart}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>
