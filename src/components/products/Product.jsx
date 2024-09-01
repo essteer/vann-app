@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { CartContext } from "../../App.js";
+import { baseURL, CartContext } from "../../App.js";
 import "../../styles/products/Product.css";
 
 const Product = () => {
@@ -10,7 +10,7 @@ const Product = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null)
     const [quantity, setQuantity] = useState(1)
-    const url = `http://localhost:9001/api/v1/products/${productId}`
+    const url = `${baseURL}/products/${productId}`
 
     useEffect(() => {
         const fetchProduct = () => {
@@ -43,10 +43,9 @@ const Product = () => {
         const existingQuantity = currentCartItems[productId] || 0;
         const newQuantity = existingQuantity + quantity;
 
-        const updatedCartItems = {
-            ...currentCartItems,
-            [productId]: newQuantity
-        };
+        const updatedCartItems = { ...currentCartItems }
+        updatedCartItems[productId] = newQuantity
+
         updateCart(cart.cartId, updatedCartItems);
     };
 
