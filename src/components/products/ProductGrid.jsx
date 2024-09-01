@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
-import '../../styles/ProductGrid.css';
+import '../../styles/products/ProductGrid.css';
 
 function ProductGrid({ products }) {
 

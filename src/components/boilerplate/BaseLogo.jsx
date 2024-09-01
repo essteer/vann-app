@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import "../../styles/BaseLogo.css"
+import "../../styles/boilerplate/BaseLogo.css"
 
 const BaseLogo = () => {
 

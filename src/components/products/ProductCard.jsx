@@ -1,4 +1,4 @@
-import "../../styles/ProductCard.css"
+import "../../styles/products/ProductCard.css"
 
 const Product = (props) => {
 

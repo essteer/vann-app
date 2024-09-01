@@ -1,4 +1,4 @@
-import "../styles/Banner.css"
+import "../../styles/boilerplate/Banner.css"
 
 const Banner = () => {
 
