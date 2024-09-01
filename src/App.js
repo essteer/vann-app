@@ -2,13 +2,14 @@ import { createContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import "./App.css";
-import Banner from "./components/Banner.jsx";
 import Main from "./components/Main.jsx";
 import Shop from "./components/Shop.jsx";
+import Banner from "./components/boilerplate/Banner.jsx";
 import BaseLogo from "./components/boilerplate/BaseLogo.jsx";
 import Footer from "./components/boilerplate/Footer.jsx";
 import Navbar from "./components/boilerplate/Navbar.jsx";
 import NotFound from "./components/boilerplate/NotFound.jsx";
+import Cart from "./components/carts/Cart.jsx";
 import Product from "./components/products/Product.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
@@ -19,9 +20,11 @@ import ProductSpecifications from "./components/pages/ProductSpecifications.jsx"
 import RingSizeChart from "./components/pages/RingSizeChart.jsx";
 import axios from "axios";
 
+export const baseURL = "http://localhost:9001/api/v1"
 export const CartContext = createContext();
 
 function App() {
+  
   const [cart, setCart] = useState([]);
   const demoUserId = "0df10449-d393-4c21-a78a-165c12d8ce09";
   const demoUserCartId = "35c6e5f4-b876-4539-be24-c45705ce47dd";
@@ -30,7 +33,7 @@ function App() {
     const fetchCart = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:9001/api/v1/cart/${demoUserCartId}`
+          `${baseURL}/carts/${demoUserCartId}`
         );
         setCart(response.data);
       } catch (error) {
@@ -49,7 +52,7 @@ function App() {
   const updateCart = async (cartId, cartItems) => {
     try {
       const response = await axios.put(
-        `http://localhost:9001/api/v1/carts/${cartId}`,
+        `${baseURL}/carts/${cartId}`,
         cartItems,
         {
           headers: {
@@ -66,7 +69,7 @@ function App() {
     }
   };
 
-  
+
   return (
     <CartContext.Provider value={{ cart, updateCart }}>
       <div className="App">
@@ -84,6 +87,7 @@ function App() {
               </div>
             }
           />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/pages/about" element={<About />} />
           <Route path="/pages/contact" element={<Contact />} />
           <Route
