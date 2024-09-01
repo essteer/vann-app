@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+<h1 align="center">VANN: Frontend</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=flat&labelColor=555&logo=CSS3&logoColor=white"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&labelColor=555&logo=HTML5&logoColor=white"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&labelColor=555&logo=JavaScript&logoColor=white"></a>
+  <a href="https://nodejs.org/en"><img src="https://img.shields.io/badge/Node.js-5FA04E.svg?style=flat&labelColor=555&logo=nodedotjs&logoColor=white"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&labelColor=555&logo=React&logoColor=white"></a>
+</p>
 
-## Available Scripts
+This is a project to develop a frontend for integration with an e-commerce site backend server.
 
-In the project directory, you can run:
+The initial implementation is a simplified model &mdash; further features such as richer product models and user authentication will be introduced in subsequent versions.
 
-### `npm start`
+The backend server is built with Java Spring Boot on a PostgreSQL database and is located [here](https://github.com/essteer/vann). An overview of the model is introduced in the README of that repo.
 
-Runs the app in the development mode.\
+## Setup and installation
+
+This program was developed with Node 22.2.0 and React 18.3.1.
+
+### Codebase
+
+<a href="https://github.com/essteer/vann-app"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=flat&labelColor=555&logo=GitHub&logoColor=white"></a>
+
+To clone this repo, open the terminal on your machine and run the following command from within the desired workspace:
+
+```console
+$ git clone git@github.com:essteer/vann-app
+```
+
+The required dependencies are included in `package.json`. To install them run:
+
+```console
+$ npm install
+```
+
+To build the project for production use this command:
+
+```console
+$ npm run build
+```
+
+## Operation
+
+In the project root directory, use this command to run the app in development mode:
+
+```console
+$ npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The page will reload in response to changes and lint errors may be displayed in the console.
