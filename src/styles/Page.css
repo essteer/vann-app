@@ -6,10 +6,6 @@
     margin-bottom: 30vh;
 }
 
-.spacing {
-    height: 75px;
-}
-
 .column-container {
     display: flex;
     margin: 0 25px;

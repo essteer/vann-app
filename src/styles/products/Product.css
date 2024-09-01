@@ -6,10 +6,6 @@
     margin-bottom: 30vh;
 }
 
-.spacing {
-    height: 75px;
-}
-
 .container-container {
     display: flex;
     flex-direction: column;
