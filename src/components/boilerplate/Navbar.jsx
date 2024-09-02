@@ -7,9 +7,9 @@ const Navbar = () => {
         <div className="navbar-container" >
             <nav className="navbar">
                 <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-                    <img className="logo" src="/images/VANN_WEB_LOGO.avif" alt="VANN logo"></img>
+                    <img className="navbar-logo" src="/images/VANN_WEB_LOGO.avif" alt="VANN logo"></img>
                 </Link>
-                <ul className="nav-links">
+                <ul className="navbar-links">
                     <li>
                         <Link to="/shop" onClick={() => window.scrollTo(0, 0)}>Shop</Link>
                     </li>

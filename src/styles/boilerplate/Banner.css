@@ -1,4 +1,4 @@
-.banner {
+.banner-container {
     color: #FFF;
     background-color: #11fe34;
     line-height: 1.5;
@@ -7,7 +7,7 @@
     font-weight: 100;
 }
 
-.banner h2 {
+.banner-content {
     white-space: pre;
     margin: 0;
 }

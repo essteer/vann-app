@@ -1,4 +1,4 @@
-.baselogo {
+.base-logo-container {
     position: relative;
     bottom: 0;
     display: flex;
@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.baselogo img {
+.base-logo-image {
     border-radius: 0;
     padding: 15px;
     margin: 15px;

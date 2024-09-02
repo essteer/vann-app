@@ -37,6 +37,11 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .pt-sans-narrow-regular {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 400;
