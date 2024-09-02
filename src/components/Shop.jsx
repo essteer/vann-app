@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { baseURL } from '../../App.js';
+import { baseURL } from '../App.js';
 import '../styles/Shop.css';
 import ProductGrid from "./products/ProductGrid.jsx";
 

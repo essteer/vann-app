@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import { baseURL } from '../../App.js';
+import { baseURL } from '../App.js';
 import "../styles/Main.css";
 import ProductGrid from "./products/ProductGrid.jsx";
 
