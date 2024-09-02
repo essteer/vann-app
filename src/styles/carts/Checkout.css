@@ -1,0 +1,12 @@
+.checkout-container {
+    flex-grow: 1;
+    min-height: 100vh;
+    font-family: "PT Sans Narrow", sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+}
+
+.checkout-message {
+    font-size: 40pt;
+}

@@ -1,6 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import axios from "axios";
 import Marquee from "react-fast-marquee";
+
 import "./App.css";
 import Main from "./components/Main.jsx";
 import Shop from "./components/Shop.jsx";
@@ -10,6 +12,7 @@ import Footer from "./components/boilerplate/Footer.jsx";
 import Navbar from "./components/boilerplate/Navbar.jsx";
 import NotFound from "./components/boilerplate/NotFound.jsx";
 import Cart from "./components/carts/Cart.jsx";
+import Checkout from "./components/carts/Checkout.jsx";
 import Product from "./components/products/Product.jsx";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
@@ -18,13 +21,11 @@ import PrivacyPolicy from "./components/pages/PrivacyPolicy.jsx";
 import ProductCare from "./components/pages/ProductCare.jsx";
 import ProductSpecifications from "./components/pages/ProductSpecifications.jsx";
 import RingSizeChart from "./components/pages/RingSizeChart.jsx";
-import axios from "axios";
 
-export const baseURL = "http://localhost:9001/api/v1"
+export const baseURL = "http://localhost:9001/api/v1";
 export const CartContext = createContext();
 
 function App() {
-  
   const [cart, setCart] = useState([]);
   const demoUserId = "0df10449-d393-4c21-a78a-165c12d8ce09";
   const demoUserCartId = "35c6e5f4-b876-4539-be24-c45705ce47dd";
@@ -32,9 +33,7 @@ function App() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(
-          `${baseURL}/carts/${demoUserCartId}`
-        );
+        const response = await axios.get(`${baseURL}/carts/${demoUserCartId}`);
         setCart(response.data);
       } catch (error) {
         console.error("Error fetching cart:", error);
@@ -48,19 +47,19 @@ function App() {
     fetchCart();
   }, [demoUserCartId]);
 
-
-  const updateCart = async (cartId, cartItems) => {
+  const updateCart = async (cartId, updatedCartItems) => {
     try {
       const response = await axios.put(
         `${baseURL}/carts/${cartId}`,
-        cartItems,
+        updatedCartItems,
         {
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-      console.log("Cart update OK: ", response.data);
+      setCart(response.data);
+
     } catch (error) {
       console.error(
         "Cart update error: ",
@@ -69,9 +68,8 @@ function App() {
     }
   };
 
-
   return (
-    <CartContext.Provider value={{ cart, updateCart }}>
+    <CartContext.Provider value={{ cart, setCart, updateCart }}>
       <div className="App">
         <Navbar />
 
@@ -88,6 +86,7 @@ function App() {
             }
           />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/checkout" element={<Checkout />} />
           <Route path="/pages/about" element={<About />} />
           <Route path="/pages/contact" element={<Contact />} />
           <Route

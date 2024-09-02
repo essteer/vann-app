@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { baseURL, CartContext } from '../../App.js';
 import axios from 'axios';
 import CartGrid from './CartGrid.jsx';
@@ -10,6 +10,7 @@ const Cart = () => {
     const [cartItems, setCartItems] = useState([])
     const [customer, setCustomer] = useState(null)
     const [totalCost, setTotalCost] = useState(0)
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -58,6 +59,8 @@ const Cart = () => {
             })
             setCartItems([])
             setTotalCost(0)
+
+            navigate('/cart/checkout')
 
         } catch (error) {
             console.error('Error checking out cart: ', error);
