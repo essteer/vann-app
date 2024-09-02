@@ -60,8 +60,15 @@
     height: 150px;
 }
 
+.contact-form-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .contact-form-button {
-    width: 75%;
+    width: 100%;
+    max-width: 450px;
     padding: 4px 16px;
     background-color: #000;
     color: #FFF;

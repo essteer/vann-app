@@ -79,7 +79,9 @@ const Contact = () => {
                                 required
                             />
                         </div>
+                        <div className="contact-form-button-container">
                         <button className="contact-form-button" type="submit">Send</button>
+                        </div>
                     </form>
                     <div>
                         <p className="sendConfirmation" >{sendConfirmation}</p>
