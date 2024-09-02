@@ -23,7 +23,6 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form submitted:', formData);
         setSendConfirmation("We'll be in touch soon!")
     };
 

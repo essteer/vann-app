@@ -21,7 +21,7 @@ const Main = () => {
             const promises = featuredProductIds.map((featuredProductId) => {
                 return axios.get(`${api}/${featuredProductId}`).then(response => response.data)
             })
-            Promise.all(promises).then((data) => {setFeaturedProducts(data)}).catch(error => console.log(error))
+            Promise.all(promises).then((data) => {setFeaturedProducts(data)}).catch(error => console.error(error))
         }
         fetchFeaturedProducts()
     }, [])

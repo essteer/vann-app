@@ -19,10 +19,9 @@ const Product = () => {
                 if (response.data) {
                     setProduct(response.data)
                 } else {
-                    console.log('Error retrieving data')
+                    console.error('Error retrieving data')
                 }
-            })
-                .catch(error => console.log('Error retrieving data: ' + error))
+            }).catch(error => console.error('Error retrieving data: ' + error))
         }
         fetchProduct()
     }, [productId])
