@@ -1,0 +1,23 @@
+.chart-container {
+    padding: 0 25px;
+}
+
+.chart-lead-container {
+    width: 100%;
+    font-size: 36pt;
+}
+
+.chart-lead {
+    padding: 0;
+    margin: 0;
+}
+
+.chart-image-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.chart-image-container .image {
+    max-width: 900px;
+}
