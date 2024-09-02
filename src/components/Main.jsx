@@ -13,10 +13,10 @@ const Main = () => {
     useEffect(() => {
         const fetchFeaturedProducts = () => {
             const featuredProductIds = [
-                'f2994d85-ab6e-4fe6-b999-b8379dd34753',
-                '7bf6e551-b6ae-4fdd-af91-cca91ee812e8',
-                '9c0d5e24-1e63-474f-8e30-2e5f3cf0efce',
-                '591ccb5d-b598-4c6e-826f-a5d28cfce837',
+                '5682a447-7519-4a37-9eab-bcda3d9f0482',
+                '75fc8c61-87a3-462a-a0a1-42f6937405b3',
+                '5479307c-45a0-428b-b433-da5df1df2e6e',
+                '6211565d-b93a-4803-bbcb-16435481415e',
             ]
             const promises = featuredProductIds.map((featuredProductId) => {
                 return axios.get(`${api}/${featuredProductId}`).then(response => response.data)

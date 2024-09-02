@@ -27,8 +27,8 @@ export const CartContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
-  const demoUserId = "0df10449-d393-4c21-a78a-165c12d8ce09";
-  const demoUserCartId = "35c6e5f4-b876-4539-be24-c45705ce47dd";
+  const demoUserId = "8d3f3767-7c13-4c08-b757-42f03b8e3981";
+  const demoUserCartId = "a18a339d-1b11-47b3-bbf7-e02132bfd2a3";
 
   useEffect(() => {
     const fetchCart = async () => {
