@@ -8,12 +8,12 @@ function CartGrid({ cartItems }) {
         <div>
             <div className="cart-grid">
                 {cartItems.map((item) => (
-                    <Link to={`/products/${item.productId}`} key={item.productId} onClick={() => window.scrollTo(0, 0)}>
+                    <Link to={`/products/${item.id}`} key={item.id} onClick={() => window.scrollTo(0, 0)}>
                     <CartCard
-                        key={item.productId}
-                        imageURI={item.productImage}
-                        name={item.productName}
-                        price={item.productPrice}
+                        key={item.id}
+                        imageURI={item.imageURI}
+                        name={item.name}
+                        price={item.price}
                         quantity={item.quantity}
                     />
                     </Link>

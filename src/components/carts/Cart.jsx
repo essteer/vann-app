@@ -15,7 +15,7 @@ const Cart = () => {
 
     useEffect(() => {
         const fetchCartItems = async () => {
-            if (!cart.cartId || Object.keys(cart.cartItems).length === 0) return;
+            if (!cart.id || Object.keys(cart.cartItems).length === 0) return;
             try {
                 const fetchedItems = await Promise.all(
                     Object.entries(cart.cartItems).map(async ([productId, quantity]) => {
@@ -27,10 +27,10 @@ const Cart = () => {
                 const sortedItems = handleSort(fetchedItems)
                 setCartItems(sortedItems)
 
-                const { data: customerData } = await axios.get(`${baseURL}/customers/${cart.cartCustomerId}`)
+                const { data: customerData } = await axios.get(`${baseURL}/customers/${cart.customer.id}`)
                 setCustomer(customerData)
 
-                const total = sortedItems.reduce((acc, item) => acc + item.productPrice * item.quantity, 0)
+                const total = sortedItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
                 setTotalCost(total)
 
             } catch (error) {
@@ -39,13 +39,13 @@ const Cart = () => {
             }
         };
         fetchCartItems();
-    }, [cart.cartId, cart.cartItems]);
+    }, [cart.id, cart.cartItems, cart.customer]);
 
 
     const checkoutCart = async () => {
-        if (!cart.cartId || cartItems.length === 0) return;
+        if (!cart.id || cartItems.length === 0) return;
         try {
-            await axios.put(`${baseURL}/carts/checkout/${cart.cartId}`,
+            await axios.put(`${baseURL}/carts/checkout/${cart.id}`,
                 {
                     'billAddress': '1 Office Park',  // note: hard-coded for demo purposes
                     'shipAddress': '2 Suburb Road'
@@ -54,7 +54,7 @@ const Cart = () => {
                     headers: { 'Content-Type': 'application/json' }
                 });
 
-            await updateCart(cart.cartId, {
+            await updateCart(cart.id, {
                 cartItems: {},
             })
             setCartItems([])
@@ -69,9 +69,9 @@ const Cart = () => {
 
 
     const emptyCart = async () => {
-        if (!cart.cartId || cartItems.length === 0) return;
+        if (!cart.id || cartItems.length === 0) return;
         try {
-            await axios.delete(`${baseURL}/carts/${cart.cartId}`)
+            await axios.delete(`${baseURL}/carts/${cart.id}`)
 
             setCart(prevCart => ({
                 ...prevCart,
@@ -87,7 +87,7 @@ const Cart = () => {
 
 
     const handleSort = (products) => {
-        return products.sort((a, b) => a.productName.localeCompare(b.productName))
+        return products.sort((a, b) => a.name.localeCompare(b.name))
     }
 
 
@@ -103,7 +103,7 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            {customer && <h2 className="cart-customer-name">{customer.customerName}'s cart</h2>}
+            {customer && <h2 className="cart-customer-name">{customer.name}'s cart</h2>}
             {cartItems.length === 0 ? (
                 <div className="cart-is-empty-message-container">
                     <div className="spacing"></div>
