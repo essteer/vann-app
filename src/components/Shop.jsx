@@ -20,28 +20,28 @@ const Shop = () => {
     const handleSort = (products) => {
         if (sortType === '$—$$') {
             return products.sort((a, b) => {
-                if (a.productPrice === b.productPrice) {
-                    return a.productName.localeCompare(b.productName);
+                if (a.price === b.price) {
+                    return a.name.localeCompare(b.name);
                 } else {
-                    return a.productPrice - b.productPrice;
+                    return a.price - b.price;
                 }
             });
         } else if (sortType === '$$—$') {
             return products.sort((a, b) => {
-                if (a.productPrice === b.productPrice) {
-                    return a.productName.localeCompare(b.productName);
+                if (a.price === b.price) {
+                    return a.name.localeCompare(b.name);
                 } else {
-                    return b.productPrice - a.productPrice;
+                    return b.price - a.price;
                 }
             });
         } else {
-            return products.sort((a, b) => a.productName.localeCompare(b.productName));
+            return products.sort((a, b) => a.name.localeCompare(b.name));
         }
     };
 
     useEffect(() => {
         const fetchProducts = () => {
-            const url = productCategory === 'all' ? api : productCategory === 'ear cuffs' ? `${api}/category/name/ear%20cuffs` : `${api}/category/name/${productCategory}`
+            const url = productCategory === 'all' ? api : productCategory === 'ear cuffs' ? `${api}/category/ear%20cuffs` : `${api}/category/${productCategory}`
             axios.get(url).then(response => {
                 if (response.data) {
                     const sortedProducts = handleSort(response.data)
@@ -53,7 +53,8 @@ const Shop = () => {
                 .catch(error => console.log('Error retrieving data: ' + error))
         }
         fetchProducts()
-    }, [productCategory, sortType])
+    // eslint-disable-next-line
+    }, [api, productCategory, sortType])
 
     return (
         <div className="shop-container">

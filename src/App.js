@@ -27,8 +27,8 @@ export const CartContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
-  const demoUserId = "8d3f3767-7c13-4c08-b757-42f03b8e3981";
-  const demoUserCartId = "a18a339d-1b11-47b3-bbf7-e02132bfd2a3";
+  const demoUserId = "6401498c-a999-4fea-8b76-2c52e9362942";
+  const demoUserCartId = "7621804e-dbd7-44e6-b7a7-7b5cc3207219";
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -36,11 +36,11 @@ function App() {
         const response = await axios.get(`${baseURL}/carts/${demoUserCartId}`);
         setCart(response.data);
       } catch (error) {
-        console.error("Error fetching cart:", error);
+        console.error("Error fetching cart: ", error);
         setCart({
           cartItems: {},
-          cartCustomerId: demoUserId,
-          cartId: demoUserCartId,
+          customer: {id: demoUserId},
+          id: demoUserCartId,
         });
       }
     };
