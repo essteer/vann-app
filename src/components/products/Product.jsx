@@ -46,7 +46,7 @@ const Product = () => {
         const updatedCartItems = { ...currentCartItems }
         updatedCartItems[productId] = newQuantity
 
-        updateCart(cart.cartId, updatedCartItems);
+        updateCart(cart.id, updatedCartItems);
     };
 
     
@@ -55,12 +55,12 @@ const Product = () => {
             {product && (
                 <div className="container-container">
                     <div className="product-lead-container">
-                        <h1 className="product-name">{product.productName}</h1>
-                        <p className="product-price">US${product.productPrice}.00</p>
+                        <h1 className="product-name">{product.name}</h1>
+                        <p className="product-price">US${product.price}.00</p>
                     </div>
                     <div className="product-main-container">
                         <div className="product-image-container">
-                            <img className="product-image" src={`https://www.vannjewellery.com/cdn/shop/${product.productImage}`} />
+                            <img className="product-image" src={`https://www.vannjewellery.com/cdn/shop/${product.imageURI}`} />
                         </div>
                         <div className="product-details-and-quantity-container">
                             <div className="product-details-container">

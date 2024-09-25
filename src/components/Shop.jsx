@@ -20,22 +20,22 @@ const Shop = () => {
     const handleSort = (products) => {
         if (sortType === '$—$$') {
             return products.sort((a, b) => {
-                if (a.productPrice === b.productPrice) {
-                    return a.productName.localeCompare(b.productName);
+                if (a.price === b.price) {
+                    return a.name.localeCompare(b.name);
                 } else {
-                    return a.productPrice - b.productPrice;
+                    return a.price - b.price;
                 }
             });
         } else if (sortType === '$$—$') {
             return products.sort((a, b) => {
-                if (a.productPrice === b.productPrice) {
-                    return a.productName.localeCompare(b.productName);
+                if (a.price === b.price) {
+                    return a.name.localeCompare(b.name);
                 } else {
-                    return b.productPrice - a.productPrice;
+                    return b.price - a.price;
                 }
             });
         } else {
-            return products.sort((a, b) => a.productName.localeCompare(b.productName));
+            return products.sort((a, b) => a.name.localeCompare(b.name));
         }
     };
 
