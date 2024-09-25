@@ -53,6 +53,7 @@ const Shop = () => {
                 .catch(error => console.log('Error retrieving data: ' + error))
         }
         fetchProducts()
+    // eslint-disable-next-line
     }, [api, productCategory, sortType])
 
     return (
