@@ -24,7 +24,7 @@ const Product = () => {
             }).catch(error => console.error('Error retrieving data: ' + error))
         }
         fetchProduct()
-    }, [productId])
+    }, [productId, url])
 
 
     const incrementQuantity = () => {
@@ -60,7 +60,7 @@ const Product = () => {
                     </div>
                     <div className="product-main-container">
                         <div className="product-image-container">
-                            <img className="product-image" src={`https://www.vannjewellery.com/cdn/shop/${product.imageURI}`} />
+                            <img className="product-image" alt="" src={`https://www.vannjewellery.com/cdn/shop/${product.imageURI}`} />
                         </div>
                         <div className="product-details-and-quantity-container">
                             <div className="product-details-container">
