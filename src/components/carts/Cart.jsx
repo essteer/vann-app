@@ -47,8 +47,8 @@ const Cart = () => {
         try {
             await axios.put(`${baseURL}/carts/checkout/${cart.id}`,
                 {
-                    'billAddress': '1 Office Park',  // note: hard-coded for demo purposes
-                    'shipAddress': '2 Suburb Road'
+                    'billingAddress': '1 Office Park',  // note: hard-coded for demo purposes
+                    'shippingAddress': '2 Suburb Road'
                 },
                 {
                     headers: { 'Content-Type': 'application/json' }

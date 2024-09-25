@@ -41,7 +41,7 @@ const Shop = () => {
 
     useEffect(() => {
         const fetchProducts = () => {
-            const url = productCategory === 'all' ? api : productCategory === 'ear cuffs' ? `${api}/category/name/ear%20cuffs` : `${api}/category/name/${productCategory}`
+            const url = productCategory === 'all' ? api : productCategory === 'ear cuffs' ? `${api}/category/ear%20cuffs` : `${api}/category/${productCategory}`
             axios.get(url).then(response => {
                 if (response.data) {
                     const sortedProducts = handleSort(response.data)
@@ -53,7 +53,8 @@ const Shop = () => {
                 .catch(error => console.log('Error retrieving data: ' + error))
         }
         fetchProducts()
-    }, [productCategory, sortType])
+    // eslint-disable-next-line
+    }, [api, productCategory, sortType])
 
     return (
         <div className="shop-container">
