@@ -8,7 +8,7 @@ import '../../styles/carts/Cart.css';
 const Cart = () => {
     const { cart, setCart, updateCart } = useContext(CartContext)
     const [cartItems, setCartItems] = useState([])
-    const [customer, setCustomer] = useState(null)
+    const [user, setUser] = useState(null)
     const [totalCost, setTotalCost] = useState(0)
     const navigate = useNavigate()
 
@@ -27,8 +27,8 @@ const Cart = () => {
                 const sortedItems = handleSort(fetchedItems)
                 setCartItems(sortedItems)
 
-                const { data: customerData } = await axios.get(`${baseURL}/customers/${cart.customer.id}`)
-                setCustomer(customerData)
+                const { data: userData } = await axios.get(`${baseURL}/users/${cart.user.id}`)
+                setUser(userData)
 
                 const total = sortedItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
                 setTotalCost(total)
@@ -39,7 +39,7 @@ const Cart = () => {
             }
         };
         fetchCartItems();
-    }, [cart.id, cart.cartItems, cart.customer]);
+    }, [cart.id, cart.cartItems, cart.user]);
 
 
     const checkoutCart = async () => {
@@ -103,7 +103,7 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            {customer && <h2 className="cart-customer-name">{customer.name}'s cart</h2>}
+            {user && <h2 className="cart-user-name">{user.name}'s cart</h2>}
             {cartItems.length === 0 ? (
                 <div className="cart-is-empty-message-container">
                     <div className="spacing"></div>
