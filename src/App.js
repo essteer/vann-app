@@ -27,8 +27,8 @@ export const CartContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
-  const demoUserId = "6401498c-a999-4fea-8b76-2c52e9362942";
-  const demoUserCartId = "7621804e-dbd7-44e6-b7a7-7b5cc3207219";
+  const demoUserId = "11d4fa01-fcc7-43a8-abcf-080da00712f6";
+  const demoUserCartId = "c3a7997e-1834-4651-83b5-c086e40721a3";
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -39,7 +39,7 @@ function App() {
         console.error("Error fetching cart: ", error);
         setCart({
           cartItems: {},
-          customer: {id: demoUserId},
+          user: {id: demoUserId},
           id: demoUserCartId,
         });
       }
